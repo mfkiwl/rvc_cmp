@@ -14,7 +14,7 @@
 //
 //------------------------------------------------------------------------------
 
-`timescale 1ns/1ps
+`timescale 1ps/1ps
 `include "ss_rvc_defines.sv"
 
 module ss_rvc_tb ();
