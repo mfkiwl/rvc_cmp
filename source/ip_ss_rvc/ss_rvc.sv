@@ -33,10 +33,9 @@ module ss_rvc
     //Data Memory
     output t_xlen         AddressDmQ103H,
     output t_xlen         WrDataDmQ103H,
-    output logic          RdEnDmQ103H,
-    output logic          WrEnDmQ103H,
-    input  t_xlen         RdDataDmQ104H
+    output logic          WrEnDmQ103H
     );
 
+assign PcQ100H = '0;
 
 endmodule

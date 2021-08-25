@@ -14,7 +14,7 @@
 //
 //------------------------------------------------------------------------------
 
-`timescale 1ns/1ps
+`timescale 1ps/1ps
 `include "ss_rvc_defines.sv"
 
 module ss_rvc_tb ();
@@ -93,11 +93,13 @@ ss_rvc ss_rvc (
     //D_MEM - Load/Store Interface
     .AddressDmQ103H   (AddressDmQ103H),  //output
     .WrDataDmQ103H    (WrDataDmQ103H),   //output
-    .RdEnDmQ103H      (RdEnDmQ103H),     //output
-    .WrEnDmQ103H      (WrEnDmQ103H),     //output
-    .RdDataDmQ104H    (RdDataDmQ104H)    //input
+    .WrEnDmQ103H      (WrEnDmQ103H)      //output
     );
 
+
+//======================
+//  VC of memory - not part of DUT - its part of TB
+//======================
 mem_wrap mem_wrap (
     .QClk             (QClk),            //input
     .RstQnnnH         (RstQnnnH),        //input
@@ -123,9 +125,9 @@ mem_wrap mem_wrap (
     //D_MEM - Load/Store Interface
     .AddressDmQ103H   (AddressDmQ103H),  //input
     .WrDataDmQ103H    (WrDataDmQ103H),   //input
-    .RdEnDmQ103H      (RdEnDmQ103H),     //input
+    .RdEnDmQ103H      ('0),              //input
     .WrEnDmQ103H      (WrEnDmQ103H),     //input
-    .RdDataDmQ104H    (RdDataDmQ104H)    //output
+    .RdDataDmQ104H    ()               //output
 );
 
 //================================================================================

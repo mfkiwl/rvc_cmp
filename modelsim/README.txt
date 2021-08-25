@@ -2,6 +2,8 @@
 # This is where we out the modelsim model
 ##########################################
 
+# 0) if this is your first run - use this command to get things started
+vlib work
 
 # 1) Change directory to modesim
 cd modelsim

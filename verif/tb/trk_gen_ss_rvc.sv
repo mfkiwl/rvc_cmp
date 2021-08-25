@@ -67,17 +67,16 @@ always @(posedge QClk) begin : memory_access_print
         $fwrite(trk_d_mem_access,"%t | %8h | %8h | WRITE | %8h | \n", $realtime, PcQ104H, AddressDmQ104H , WrDataDmQ104H);
     end //if
 end //shared_space
-logic [4:0]  RegWrPtrQ104H;
-logic [31:0] RegWrDataQ104H;
-assign RegWrDataQ104H   = ss_rvc_tb.ss_rvc.RegWrDataQ104H;
-assign RegWrPtrQ104H    = ss_rvc_tb.ss_rvc.RegWrDstQ104H;
-assign CtrlRegWrQ104H   = ss_rvc_tb.ss_rvc.CtrlRegWrEnQ104H;
-//tracker on write to registers
-always @(posedge QClk) begin : write_to_registers
-    if (CtrlRegWrQ104H && RegWrPtrQ104H!=0) begin 
-        $fwrite(trk_write_registers,"%t | %08x |  x%01d  | %08x | \n", $realtime, PcQ104H, RegWrPtrQ104H , RegWrDataQ104H);
-    end //if
-end
+//logic [4:0]  RegWrPtrQ104H;
+//logic [31:0] RegWrDataQ104H;
+//assign RegWrDataQ104H   = ss_rvc_tb.ss_rvc.RegWrDataQ104H;
+//assign RegWrPtrQ104H    = ss_rvc_tb.ss_rvc.RegWrDstQ104H;
+////tracker on write to registers
+//always @(posedge QClk) begin : write_to_registers
+//    if (CtrlRegWrQ104H && RegWrPtrQ104H!=0) begin 
+//        $fwrite(trk_write_registers,"%t | %08x |  x%01d  | %08x | \n", $realtime, PcQ104H, RegWrPtrQ104H , RegWrDataQ104H);
+//    end //if
+//end
 
 
 
